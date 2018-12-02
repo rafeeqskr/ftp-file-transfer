@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+copying data from sample ftp server
+ftpcr = Ftpcr.new(host: 'test.rebex.net', username: 'demo', password: 'password')
 
-Things you may want to cover:
+ftpcr.save
 
-* Ruby version
 
-* System dependencies
+copying only files
+ftpcr.copy_files_with_folders
+ftpcr.copy_files_with_folders('source_complete_path')
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+copying folders with files
+ftpcr.copy_files_with_folders
+ftpcr.copy_files_with_folders('source_complete_path')
