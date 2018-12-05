@@ -65,3 +65,4 @@ gem 'net-sftp'
 
 gem 'resque' # background jobs
 gem 'resque-scheduler' # job scheduling
+gem 'active_scheduler'

@@ -1,8 +1,14 @@
 ---
 SftpCopyFilesJob:
   description: 'Add any missing email sending schedules'
-  class: SftpCopyFilesJob
+  class: ActiveJob::QueueAdapters::ResqueAdapter::JobWrapper
   queue: default
   every:
     - '10s'
     - :first_in: '10s'
+  args:
+    -
+      job_class: SftpCopyFilesJob
+      job_id: #{SecureRandom.uuid}
+      queue_name: default 
+      arguments: 
